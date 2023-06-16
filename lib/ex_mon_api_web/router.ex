@@ -2,11 +2,11 @@ defmodule ExMonApiWeb.Router do
   use ExMonApiWeb, :router
 
   pipeline :api do
-    plug :accepts, ["json"]
+    plug(:accepts, ["json"])
   end
 
   scope "/api", ExMonApiWeb do
-    pipe_through :api
+    pipe_through(:api)
   end
 
   # Enables LiveDashboard only for development
@@ -20,9 +20,9 @@ defmodule ExMonApiWeb.Router do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
-      pipe_through [:fetch_session, :protect_from_forgery]
+      pipe_through([:fetch_session, :protect_from_forgery])
 
-      live_dashboard "/dashboard", metrics: ExMonApiWeb.Telemetry
+      live_dashboard("/dashboard", metrics: ExMonApiWeb.Telemetry)
     end
   end
 
@@ -32,9 +32,9 @@ defmodule ExMonApiWeb.Router do
   # node running the Phoenix server.
   if Mix.env() == :dev do
     scope "/dev" do
-      pipe_through [:fetch_session, :protect_from_forgery]
+      pipe_through([:fetch_session, :protect_from_forgery])
 
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
+      forward("/mailbox", Plug.Swoosh.MailboxPreview)
     end
   end
 end
