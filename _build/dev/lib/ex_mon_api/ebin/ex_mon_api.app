@@ -3,7 +3,7 @@
      {applications,
          [kernel,stdlib,elixir,logger,runtime_tools,phoenix,phoenix_ecto,
           ecto_sql,postgrex,phoenix_live_dashboard,swoosh,telemetry_metrics,
-          telemetry_poller,gettext,jason,plug_cowboy]},
+          telemetry_poller,gettext,jason,plug_cowboy,argon2_elixir]},
      {description,"ex_mon_api"},
      {modules,
          ['Elixir.ExMonApi','Elixir.ExMonApi.Application',
