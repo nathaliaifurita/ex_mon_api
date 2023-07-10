@@ -21,20 +21,12 @@ defmodule ExMonApiWeb.Router do
 
     scope "/" do
       pipe_through([:fetch_session, :protect_from_forgery])
-
       live_dashboard("/dashboard", metrics: ExMonApiWeb.Telemetry)
     end
   end
+    scope "/", ExMonApiWeb do
+      pipe_through :api
 
-  # Enables the Swoosh mailbox preview in development.
-  #
-  # Note that preview only shows emails that were sent by the same
-  # node running the Phoenix server.
-  if Mix.env() == :dev do
-    scope "/dev" do
-      pipe_through([:fetch_session, :protect_from_forgery])
-
-      forward("/mailbox", Plug.Swoosh.MailboxPreview)
+      get "/", WelcomeController, :index
     end
-  end
 end

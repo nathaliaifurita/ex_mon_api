@@ -12,7 +12,8 @@
           'Elixir.ExMonApiWeb','Elixir.ExMonApiWeb.Endpoint',
           'Elixir.ExMonApiWeb.ErrorHelpers','Elixir.ExMonApiWeb.ErrorView',
           'Elixir.ExMonApiWeb.Gettext','Elixir.ExMonApiWeb.Router',
-          'Elixir.ExMonApiWeb.Router.Helpers','Elixir.ExMonApiWeb.Telemetry']},
+          'Elixir.ExMonApiWeb.Router.Helpers','Elixir.ExMonApiWeb.Telemetry',
+          'Elixir.ExMonApiWeb.WelcomeController']},
      {registered,[]},
      {vsn,"0.1.0"},
      {mod,{'Elixir.ExMonApi.Application',[]}}]}.
